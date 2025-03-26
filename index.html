@@ -1,0 +1,3262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BharatLoads - Premium Loading Solutions</title>
+    <meta name="description" content="India's leading loading service provider with innovative solutions">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://bharatloads.com/img/logo.png" type="image/png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+    /* Base Styles */
+    :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3ce7cb;
+        --accent-color: #3498db;
+        --light-color: #ecf0f1;
+        --dark-color: #2c3e50;
+        --text-color: #333;
+        --text-light: #7f8c8d;
+        --white: #fff;
+        --black: #000;
+        --gray: #95a5a6;
+        --transition: all 0.3s ease;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+        background-color: #f9f9f9;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        transition: var(--transition);
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 4px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        background-color: var(--secondary-color);
+        color: var(--white);
+    }
+
+    .btn-primary:hover {
+        background-color: #2aa592;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(60, 231, 203, 0.3);
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: var(--white);
+        border: 2px solid var(--white);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--white);
+        color: var(--secondary-color);
+        transform: translateY(-3px);
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+        color: var(--dark-color);
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-header h2::after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background-color: var(--secondary-color);
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .section-header p {
+        color: var(--text-light);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* Header Styles */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+    }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        position: relative;
+    }
+
+    .logo img {
+        transition: var(--transition);
+        max-width: 180px;
+        height: auto;
+    }
+
+    .main-nav ul {
+        display: flex;
+        align-items: center;
+    }
+
+    .main-nav ul li {
+        margin-left: 30px;
+    }
+
+    .main-nav ul li a {
+        font-weight: 600;
+        position: relative;
+        padding: 5px 0;
+    }
+
+    .main-nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: var(--secondary-color);
+        bottom: 0;
+        left: 0;
+        transition: var(--transition);
+    }
+
+    .main-nav ul li a:hover::after,
+    .main-nav ul li.active a::after {
+        width: 100%;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        cursor: pointer;
+        width: 30px;
+        height: 24px;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 1001;
+    }
+
+    .mobile-menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--dark-color);
+        transition: var(--transition);
+        border-radius: 3px;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    /* Hero Section */
+    .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 600px;
+        overflow: hidden;
+        margin-top: 80px;
+    }
+
+    .hero-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    .hero-slide.active {
+        opacity: 1;
+    }
+
+    .hero-slide::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        color: var(--white);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 800px;
+        padding: 0 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .hero-slider-controls {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .hero-slider-controls button {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: var(--white);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+        backdrop-filter: blur(5px);
+    }
+
+    .hero-slider-controls button:hover {
+        background-color: var(--secondary-color);
+    }
+
+    .slider-indicators {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 2;
+    }
+
+    .slider-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .slider-indicator.active {
+        background-color: var(--white);
+        transform: scale(1.2);
+    }
+
+    /* Services Section */
+    .services-section {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .service-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 1px solid #eee;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+        color: white;
+        font-size: 28px;
+    }
+
+    .service-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        color: #2c3e50;
+    }
+
+    .service-card p {
+        color: #7f8c8d;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .features-list {
+        margin: 25px 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .features-list li {
+        padding: 8px 0;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 8px;
+    }
+
+    .features-list li:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        background-color: #f1f1f1;
+    }
+
+    .features-list li.checked:before {
+        background-color: #27ae60;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+        background-size: 12px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .features-list li.unchecked:before {
+        background-color: #e74c3c;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+        background-size: 12px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .service-cta {
+        display: inline-flex;
+        align-items: center;
+        color: #3498db;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .service-cta i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .service-cta:hover {
+        color: #2c3e50;
+    }
+
+    .service-cta:hover i {
+        transform: translateX(5px);
+    }
+
+    /* Technology Section */
+    .technology-section {
+        background-color: var(--light-color);
+    }
+
+    .tech-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .tech-text {
+        flex: 1;
+    }
+
+    .tech-image {
+        flex: 1;
+    }
+
+    .tech-text h2 {
+        font-size: 2rem;
+        color: var(--dark-color);
+        margin-bottom: 20px;
+    }
+
+    .tech-text p {
+        margin-bottom: 30px;
+        color: var(--text-light);
+    }
+
+    .tech-features {
+        margin-bottom: 30px;
+    }
+
+    .tech-features li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .tech-features i {
+        color: var(--secondary-color);
+    }
+
+    .tech-image img {
+        border-radius: 8px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Stats Section */
+    .stats-section {
+        background-color: var(--primary-color);
+        color: var(--white);
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+
+    .stat-item h3 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .stat-item p {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+        padding: 60px 0;
+    }
+
+    .testimonials-slider {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .testimonial {
+        padding: 30px;
+        background-color: var(--white);
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin: 0 15px;
+    }
+
+    .testimonial-content {
+        position: relative;
+        padding: 30px;
+    }
+
+    .quote-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 60px;
+        color: rgba(60, 231, 203, 0.1);
+        line-height: 1;
+    }
+
+    .testimonial-content p {
+        font-style: italic;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .client-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .client-info img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .client-info h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .client-info span {
+        font-size: 0.9rem;
+        color: var(--text-light);
+    }
+
+    /* CTA Section */
+    .cta-section {
+        background-color: var(--secondary-color);
+        color: var(--white);
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .cta-content p {
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    /* Footer */
+    .footer {
+        background-color: var(--dark-color);
+        color: var(--white);
+        padding: 60px 0 0;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-col h3 {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .footer-col h3::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background-color: var(--secondary-color);
+        bottom: 0;
+        left: 0;
+    }
+
+    .about-col p {
+        margin: 20px 0;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+    }
+
+    .social-links a:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+    }
+
+    .footer-col ul li {
+        margin-bottom: 15px;
+    }
+
+    .footer-col ul li a {
+        color: rgba(255, 255, 255, 0.7);
+        transition: var(--transition);
+        font-size: 0.95rem;
+    }
+
+    .footer-col ul li a:hover {
+        color: var(--white);
+        padding-left: 5px;
+    }
+
+    .contact-info li {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+    }
+
+    .contact-info i {
+        color: var(--secondary-color);
+        margin-top: 3px;
+    }
+
+    .copyright {
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+    }
+
+    .copyright a {
+        color: rgba(255, 255, 255, 0.7);
+        transition: var(--transition);
+    }
+
+    .copyright a:hover {
+        color: var(--secondary-color);
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--secondary-color);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+        border: none;
+    }
+
+    .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-5px);
+    }
+
+    /* Preloader */
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+    }
+
+    .preloader .loader {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(60, 231, 203, 0.2);
+        border-radius: 50%;
+        border-top-color: var(--secondary-color);
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .preloader.fade-out {
+        opacity: 0;
+    }
+
+    /* About Page Styles */
+    .about-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://bharatloads.com/assets/img/ll2.png') center/cover no-repeat;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        color: white;
+        text-align: center;
+        margin-top: 80px;
+    }
+    
+    .about-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    
+    /* Timeline Styles */
+    .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+    
+    .timeline::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background-color: var(--secondary-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+    }
+    
+    .timeline-item {
+        padding: 20px 0;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+    }
+    
+    .timeline-item:nth-child(odd) {
+        padding-right: 50px;
+        text-align: right;
+        left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+        padding-left: 50px;
+        text-align: left;
+        left: 50%;
+    }
+    
+    .timeline-year {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        display: inline-block;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    
+    .timeline-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .timeline-content h3 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+    
+    /* Mission Vision Section */
+    .mission-vision {
+        background-color: #f9f9f9;
+        padding: 60px 0;
+    }
+    
+    .mv-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .mv-card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+    }
+    
+    .mv-icon {
+        width: 70px;
+        height: 70px;
+        background-color: rgba(60, 231, 203, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: var(--secondary-color);
+        font-size: 28px;
+    }
+    
+    .mv-card h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+    
+    /* Team Section */
+    .team-section {
+        padding: 60px 0;
+    }
+    
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .team-member {
+        text-align: center;
+    }
+    
+    .member-photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 20px;
+        position: relative;
+    }
+    
+    .member-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .social-links {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(60, 231, 203, 0.8);
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .member-photo:hover .social-links {
+        opacity: 1;
+    }
+    
+    .social-links a {
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        background-color: white;
+        color: var(--secondary-color);
+    }
+    
+    .team-member h3 {
+        color: #2c3e50;
+        margin-bottom: 5px;
+    }
+    
+    .team-member p {
+        color: #7f8c8d;
+    }
+    
+    /* Values Section */
+    .values-section {
+        background-color: #2c3e50;
+        color: white;
+        padding: 60px 0;
+    }
+    
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .value-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .value-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .value-icon {
+        width: 70px;
+        height: 70px;
+        background-color: rgba(60, 231, 203, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: var(--secondary-color);
+        font-size: 28px;
+    }
+    
+    .value-card h3 {
+        margin-bottom: 15px;
+    }
+    
+    /* Investor Page Styles */
+    .investor-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://bharatloads.com/assets/img/ll1.png') center/cover no-repeat;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        color: white;
+        text-align: center;
+        margin-top: 80px;
+    }
+    
+    .investor-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    
+    /* Financial Highlights */
+    .financial-highlights {
+        padding: 60px 0;
+    }
+    
+    .financial-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+    }
+    
+    .stat-card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-card h3 {
+        font-size: 2.2rem;
+        color: var(--secondary-color);
+        margin-bottom: 10px;
+    }
+    
+    .stat-card p {
+        color: #7f8c8d;
+        font-size: 1rem;
+    }
+    
+    .financial-chart {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-top: 50px;
+    }
+    
+    /* Reports Section */
+    .reports-section {
+        background-color: #f9f9f9;
+        padding: 60px 0;
+    }
+    
+    .reports-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .report-card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+    }
+    
+    .report-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .report-icon {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(60, 231, 203, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        color: var(--secondary-color);
+        font-size: 24px;
+    }
+    
+    .report-card h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+    
+    .report-card p {
+        color: #7f8c8d;
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+    }
+    
+    .download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #3498db;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    .download-btn:hover {
+        color: #2c3e50;
+    }
+    
+    .download-btn i {
+        transition: transform 0.3s ease;
+    }
+    
+    .download-btn:hover i {
+        transform: translateY(3px);
+    }
+    
+    /* Calendar Section */
+    .calendar-section {
+        padding: 60px 0;
+    }
+    
+    .calendar-events {
+        max-width: 800px;
+        margin: 40px auto 0;
+    }
+    
+    .event-card {
+        display: flex;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+    
+    .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .event-date {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 20px;
+        min-width: 80px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .event-date .day {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1;
+    }
+    
+    .event-date .month {
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .event-details {
+        padding: 20px;
+        flex-grow: 1;
+    }
+    
+    .event-details h3 {
+        color: #2c3e50;
+        margin-bottom: 5px;
+    }
+    
+    .event-details p {
+        color: #7f8c8d;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+    }
+    
+    .event-link {
+        color: #3498db;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+    }
+    
+    .event-link:hover {
+        color: var(--secondary-color);
+    }
+    
+    /* Investor Contact Section */
+    .investor-contact {
+        background-color: #2c3e50;
+        color: white;
+        padding: 60px 0;
+    }
+    
+    .contact-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+        align-items: center;
+    }
+    
+    .contact-info h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .contact-info p {
+        margin-bottom: 30px;
+        opacity: 0.9;
+    }
+    
+    .detail-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .detail-item i {
+        color: var(--secondary-color);
+        font-size: 20px;
+        min-width: 20px;
+    }
+    
+    .contact-form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-form h2 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: 'Poppins', sans-serif;
+        transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: #3498db;
+        outline: none;
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+    
+    /* Contact Page Styles */
+    .contact-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        color: white;
+        text-align: center;
+        margin-top: 80px;
+    }
+    
+    .contact-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    
+    /* Contact Main Section */
+    .contact-main {
+        padding: 60px 0;
+    }
+    
+    .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+    }
+    
+    .contact-info h2 {
+        color: #2c3e50;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .contact-info p {
+        color: #7f8c8d;
+        margin-bottom: 30px;
+    }
+    
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+    
+    .info-item {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .info-icon {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(60, 231, 203, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--secondary-color);
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+    
+    .info-content h3 {
+        color: #2c3e50;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+    
+    .info-content p {
+        color: #7f8c8d;
+        margin-bottom: 5px;
+        font-size: 0.95rem;
+    }
+    
+    .social-links h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .social-links .links {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(60, 231, 203, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--secondary-color);
+        transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        transform: translateY(-3px);
+    }
+    
+    /* Contact Form */
+    .contact-form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .contact-form h2 {
+        color: #2c3e50;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: 'Poppins', sans-serif;
+        transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: #3498db;
+        outline: none;
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+        min-height: 150px;
+    }
+    
+    .error {
+        border-color: #e74c3c !important;
+    }
+    
+    .error-message {
+        color: #e74c3c;
+        font-size: 0.8rem;
+        margin-top: 5px;
+        display: none;
+    }
+    
+    /* Branches Section */
+    .branches-section {
+        background-color: #f9f9f9;
+        padding: 60px 0;
+    }
+    
+    .branches-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .branch-card {
+        background-color: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+    }
+    
+    .branch-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .branch-card h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+    
+    .branch-card p {
+        color: #7f8c8d;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+    }
+    
+    .branch-contact p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #7f8c8d;
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+    
+    .branch-contact i {
+        color: var(--secondary-color);
+    }
+    
+    /* Map Section */
+    .map-section {
+        padding: 0 0 60px;
+    }
+    
+    .map-container {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        height: 450px;
+    }
+    
+    .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+        .hero-content h1 {
+            font-size: 2.2rem;
+        }
+        
+        .tech-content {
+            flex-direction: column;
+        }
+        
+        .tech-text, .tech-image {
+            flex: none;
+            width: 100%;
+        }
+        
+        .tech-image {
+            margin-top: 40px;
+        }
+
+        .contact-content {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-form {
+            order: -1;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header-inner {
+            padding: 12px 0;
+        }
+        
+        .main-nav {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            width: 80%;
+            height: calc(100vh - 80px);
+            background-color: var(--white);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            z-index: 999;
+            overflow-y: auto;
+        }
+        
+        .main-nav.active {
+            left: 0;
+        }
+        
+        .main-nav ul {
+            flex-direction: column;
+            padding: 30px;
+        }
+        
+        .main-nav ul li {
+            margin: 0 0 20px;
+        }
+        
+        .mobile-menu-toggle {
+            display: flex;
+        }
+        
+        .hero {
+            margin-top: 70px;
+            min-height: 500px;
+        }
+        
+        .hero-content h1 {
+            font-size: 1.8rem;
+        }
+        
+        .hero-content p {
+            font-size: 1rem;
+        }
+        
+        .hero-buttons {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .section {
+            padding: 50px 0;
+        }
+        
+        .section-header h2 {
+            font-size: 1.8rem;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .footer-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Timeline adjustments */
+        .timeline::before {
+            left: 40px;
+        }
+        
+        .timeline-item {
+            width: 100%;
+            padding-left: 80px;
+            padding-right: 0;
+            text-align: left;
+            left: 0 !important;
+        }
+
+        /* Form row adjustments */
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .hero-content h1 {
+            font-size: 1.6rem;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+        
+        .hero-slider-controls button {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .services-grid, .branches-grid, .values-grid, .team-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .stats-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .testimonial {
+            padding: 20px;
+        }
+        
+        .testimonial-content {
+            padding: 20px;
+        }
+        
+        .back-to-top {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+
+        /* Event card adjustments */
+        .event-card {
+            flex-direction: column;
+        }
+        
+        .event-date {
+            flex-direction: row;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px;
+        }
+        
+        .event-date .day,
+        .event-date .month {
+            display: inline-block;
+        }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Slide Up Animation */
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Slide Left Animation */
+    @keyframes slideLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Slide Right Animation */
+    @keyframes slideRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Animation Classes */
+    .animate {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+
+    .slide-up {
+        animation-name: slideUp;
+    }
+
+    .slide-left {
+        animation-name: slideLeft;
+    }
+
+    .slide-right {
+        animation-name: slideRight;
+    }
+
+    .fade-in {
+        animation-name: fadeIn;
+    }
+
+    /* Delays */
+    .delay-1 {
+        animation-delay: 0.2s;
+    }
+
+    .delay-2 {
+        animation-delay: 0.4s;
+    }
+
+    .delay-3 {
+        animation-delay: 0.6s;
+    }
+
+    .delay-4 {
+        animation-delay: 0.8s;
+    }
+
+    /* Service Card Hover Animation */
+    .service-card:hover .service-icon {
+        animation: bounce 0.5s;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Button Hover Animation */
+    .btn:hover {
+        animation: pulse 1s;
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(60, 231, 203, 0.4);
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#home">
+                        <img src="https://bharatloads.com/img/logo.png" alt="BharatLoads Logo" width="180">
+                    </a>
+                </div>
+                
+                <!-- Main Navigation -->
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#investor">Investor</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="page-section">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-slider">
+                    <!-- Slide 1 -->
+                    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=80')">
+                        <div class="container">
+                            <div class="hero-content">
+                                <h1>Premium Loading Solutions Across India</h1>
+                                <p>Efficient, reliable, and cost-effective transportation services</p>
+                                <div class="hero-buttons">
+                                    <a href="#services" class="btn btn-primary">Our Services</a>
+                                    <a href="#contact" class="btn btn-secondary">Get a Quote</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="hero-slide" style="background-image: url('https://bharatloads.com/img/invest-img.png')">
+                        <div class="container">
+                            <div class="hero-content">
+                                <h1>Innovative Logistics Technology</h1>
+                                <p>Advanced tracking and management systems for your cargo</p>
+                                <div class="hero-buttons">
+                                    <a href="#technology" class="btn btn-primary">Learn More</a>
+                                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slider Controls -->
+                <div class="hero-slider-controls">
+                    <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <!-- Slider Indicators -->
+                <div class="slider-indicators"></div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="services-section">
+                <div class="container">
+                  <div class="section-header">
+                    <h2>Our Smart Services</h2>
+                    <p>Advanced solutions powered by technology for your logistics needs</p>
+                  </div>
+              
+                  <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                      <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                      </div>
+                      <h3>Smart Load Matching</h3>
+                      <p>AI-powered algorithms match your loads with verified transporters in real-time, ensuring optimal efficiency.</p>
+                      
+                      <ul class="features-list">
+                        <li class="checked">Verified transporters</li>
+                        <li class="checked">Real-time matching</li>
+                        <li class="checked">Location-based matching</li>
+                      </ul>
+                      
+                      <a href="#" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+              
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                      <div class="service-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                      </div>
+                      <h3>Live Tracking & Updates</h3>
+                      <p>Track your shipments in real-time with instant notifications and live location updates.</p>
+                      
+                      <ul class="features-list">
+                        <li class="checked">Live GPS tracking</li>
+                        <li class="unchecked">Instant notifications</li>
+                        <li class="unchecked">Mobile app updates</li>
+                      </ul>
+                      
+                      <a href="#" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+              
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                      <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                      </div>
+                      <h3>Secure Transport</h3>
+                      <p>End-to-end security with verified carriers and comprehensive insurance coverage.</p>
+                      
+                      <ul class="features-list">
+                        <li class="unchecked">Insurance coverage</li>
+                        <li class="checked">Verified carriers</li>
+                        <li class="checked">Secure handling</li>
+                      </ul>
+                      
+                      <a href="#" class="service-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+            <!-- Technology Section -->
+            <section id="technology" class="section technology-section">
+                <div class="container">
+                    <div class="tech-content">
+                        <div class="tech-text">
+                            <h2>Advanced Loading Technology</h2>
+                            <p>Our proprietary loading management system ensures precision and efficiency in every operation.</p>
+                            <ul class="tech-features">
+                                <li><i class="fas fa-check-circle"></i> Real-time load monitoring</li>
+                                <li><i class="fas fa-check-circle"></i> Automated weight distribution</li>
+                                <li><i class="fas fa-check-circle"></i> AI-powered route optimization</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7 tracking system</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Explore Our Technology</a>
+                        </div>
+                        <div class="tech-image">
+                            <img src="https://bharatloads.com/img/testimony.png" alt="Technology Dashboard" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="section stats-section">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3 data-count="1500">0</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 data-count="250">0</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 data-count="500">0</h3>
+                            <p>Equipment Units</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 data-count="45">0</h3>
+                            <p>Cities Covered</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="section testimonials-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>What Our Clients Say</h2>
+                        <p>Trusted by businesses across industries</p>
+                    </div>
+                    
+                    <div class="testimonials-slider">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p>BharatLoads transformed our logistics operations with their efficient loading solutions. Their team is professional and reliable.</p>
+                                <div class="client-info">
+                                    <img src="https://bharatloads.com/img/icon-13.png" alt="Client">
+                                    <div>
+                                        <h4>Rajesh Sharma</h4>
+                                        <span>CEO, Sharma Constructions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p>The port loading services saved us significant time and costs. Their technology integration is impressive.</p>
+                                <div class="client-info">
+                                    <img src="https://bharatloads.com/img/icon-12.png" alt="Client">
+                                    <div>
+                                        <h4>Priya Patel</h4>
+                                        <span>Logistics Manager, OceanExports</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p>We've been using their equipment rental service for 3 years now. Always well-maintained and delivered on time.</p>
+                                <div class="client-info">
+                                    <img src="https://bharatloads.com/img/icon-14.png" alt="Client">
+                                    <div>
+                                        <h4>Vikram Singh</h4>
+                                        <span>Operations Head, BuildRight</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="section cta-section">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2>Ready to Transform Your Loading Operations?</h2>
+                        <p>Get in touch with our team for a customized solution</p>
+                        <div class="cta-buttons">
+                            <a href="#contact" class="btn btn-primary">Contact Us</a>
+                            <a href="tel:+911234567890" class="btn btn-secondary">
+                                <i class="fas fa-phone"></i> +91 12345 67890
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page-section" style="display:none;">
+            <!-- About Hero Section -->
+            <section class="about-hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Driving Innovation in Loading Solutions</h1>
+                        <p>Since 2010, BharatLoads has been transforming India's logistics landscape with cutting-edge technology and reliable services.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Company Story Section -->
+            <section class="company-story">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Our Journey</h2>
+                        <p>From humble beginnings to industry leadership</p>
+                    </div>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2010</div>
+                            <div class="timeline-content">
+                                <h3>Foundation</h3>
+                                <p>Established in Mumbai with 5 trucks and a vision to revolutionize loading services in India.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2014</div>
+                            <div class="timeline-content">
+                                <h3>First Expansion</h3>
+                                <p>Expanded operations to 3 new states and introduced our first technology platform.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2018</div>
+                            <div class="timeline-content">
+                                <h3>Tech Revolution</h3>
+                                <p>Launched AI-powered load matching system, increasing efficiency by 40%.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2023</div>
+                            <div class="timeline-content">
+                                <h3>National Presence</h3>
+                                <p>Now serving 45+ cities across India with 500+ equipment units and 250+ employees.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mission Vision Section -->
+            <section class="mission-vision">
+                <div class="container">
+                    <div class="mv-grid">
+                        <div class="mv-card mission">
+                            <div class="mv-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>Our Mission</h3>
+                            <p>To provide innovative, efficient, and reliable loading solutions that empower businesses across India to grow without logistical constraints.</p>
+                        </div>
+                        
+                        <div class="mv-card vision">
+                            <div class="mv-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3>Our Vision</h3>
+                            <p>To become India's most trusted loading solutions partner by leveraging technology and operational excellence to deliver unmatched value.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="team-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Leadership Team</h2>
+                        <p>The driving force behind our success</p>
+                    </div>
+                    
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="https://bharatloads.com/img/wp.gif" alt="Rajiv Malhotra">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                            <h3>Rajiv Malhotra</h3>
+                            <p>Founder & CEO</p>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="https://bharatloads.com/img/wp.gif" alt="Priya Sharma">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                            <h3>Priya Sharma</h3>
+                            <p>Chief Operations Officer</p>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="https://bharatloads.com/img/wp.gif" alt="Arjun Patel">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                            <h3>Arjun Patel</h3>
+                            <p>Chief Technology Officer</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Values Section -->
+            <section class="values-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Our Core Values</h2>
+                        <p>The principles that guide everything we do</p>
+                    </div>
+                    
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Integrity</h3>
+                            <p>We conduct business with honesty and transparency, building trust with every interaction.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Innovation</h3>
+                            <p>We constantly seek better ways to solve logistics challenges through technology.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Customer Focus</h3>
+                            <p>Our clients' success is our top priority in every decision we make.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Excellence</h3>
+                            <p>We strive for the highest standards in service quality and operational efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Investor Page -->
+        <section id="investor" class="page-section" style="display:none;">
+            <!-- Investor Hero Section -->
+            <section class="investor-hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Investor Relations</h1>
+                        <p>Driving growth through innovation and operational excellence</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Financial Highlights Section -->
+            <section class="financial-highlights">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Financial Highlights</h2>
+                        <p>Key performance indicators and growth metrics</p>
+                    </div>
+                    
+                    <div class="financial-stats">
+                        <div class="stat-card">
+                            <h3>₹2.5B</h3>
+                            <p>Annual Revenue (FY 2023)</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <h3>32%</h3>
+                            <p>Revenue Growth (YoY)</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <h3>45+</h3>
+                            <p>Cities of Operation</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <h3>150%</h3>
+                            <p>Customer Retention Rate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="financial-chart">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section class="reports-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Reports & Presentations</h2>
+                        <p>Access our latest financial documents</p>
+                    </div>
+                    
+                    <div class="reports-grid">
+                        <div class="report-card">
+                            <div class="report-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h3>Annual Report 2023</h3>
+                            <p>Comprehensive overview of our financial performance and strategic direction.</p>
+                            <a href="reports/annual-report-2023.pdf" class="download-btn" download>
+                                <i class="fas fa-download"></i> Download (PDF)
+                            </a>
+                        </div>
+                        
+                        <div class="report-card">
+                            <div class="report-icon">
+                                <i class="fas fa-file-powerpoint"></i>
+                            </div>
+                            <h3>Investor Presentation</h3>
+                            <p>Current business overview and growth strategy presentation.</p>
+                            <a href="reports/investor-presentation-2023.pptx" class="download-btn" download>
+                                <i class="fas fa-download"></i> Download (PPTX)
+                            </a>
+                        </div>
+                        
+                        <div class="report-card">
+                            <div class="report-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3>Quarterly Results Q1 2024</h3>
+                            <p>Detailed financial results for the first quarter of fiscal year 2024.</p>
+                            <a href="reports/q1-2024-results.pdf" class="download-btn" download>
+                                <i class="fas fa-download"></i> Download (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Investor Calendar Section -->
+            <section class="calendar-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Investor Calendar</h2>
+                        <p>Upcoming events and important dates</p>
+                    </div>
+                    
+                    <div class="calendar-events">
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="day">15</span>
+                                <span class="month">Aug</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>Q2 2024 Earnings Release</h3>
+                                <p>10:00 AM IST | Virtual Conference</p>
+                                <a href="#" class="event-link">Add to Calendar</a>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="day">28</span>
+                                <span class="month">Sep</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>Annual General Meeting</h3>
+                                <p>3:00 PM IST | Mumbai Headquarters</p>
+                                <a href="#" class="event-link">Register to Attend</a>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="day">10</span>
+                                <span class="month">Nov</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>Investor Day</h3>
+                                <p>Full Day Event | Virtual</p>
+                                <a href="#" class="event-link">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Investor Contact Section -->
+            <section class="investor-contact">
+                <div class="container">
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <h2>Investor Relations Team</h2>
+                            <p>For investor inquiries, please contact our dedicated IR team.</p>
+                            
+                            <div class="contact-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>Rahul Kapoor, Head of Investor Relations</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+91 98765 43210</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>investors@bharatloads.com</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-form">
+                            <form id="investorForm">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Email Address" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Phone Number">
+                                </div>
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="">Inquiry Type</option>
+                                        <option>Financial Information</option>
+                                        <option>Shareholder Services</option>
+                                        <option>Media Inquiry</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <textarea placeholder="Your Message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page-section" style="display:none;">
+            <!-- Contact Hero Section -->
+            <section class="contact-hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Contact Us</h1>
+                        <p>We're here to help with all your loading and logistics needs</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Main Section -->
+            <section class="contact-main">
+                <div class="container">
+                    <div class="contact-container">
+                        <!-- Contact Info -->
+                        <div class="contact-info">
+                            <h2>Get in Touch</h2>
+                            <p>Have questions or need assistance? Our team is ready to help you with any inquiries about our
+                                services, partnerships, or career opportunities.</p>
+
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h3>Headquarters</h3>
+                                        <p>BharatLoads Tower, 123 Industrial Area, Mumbai, Maharashtra 400001</p>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h3>Phone</h3>
+                                        <p>General Inquiries: +91 12345 67890</p>
+                                        <p>Support: +91 98765 43210</p>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h3>Email</h3>
+                                        <p>info@bharatloads.com</p>
+                                        <p>support@bharatloads.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h3>Working Hours</h3>
+                                        <p>Monday - Saturday: 8:00 AM - 8:00 PM</p>
+                                        <p>Sunday: Emergency Support Only</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="social-links">
+                                <h3>Follow Us</h3>
+                                <div class="links">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="contact-form">
+                            <h2>Send Us a Message</h2>
+                            <form id="contactForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" placeholder="Email Address" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Phone Number">
+                                </div>
+
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="">Select Department</option>
+                                        <option>Customer Support</option>
+                                        <option>Sales Inquiry</option>
+                                        <option>Partnerships</option>
+                                        <option>Careers</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea placeholder="Your Message" rows="6" required></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Branches Section -->
+            <section class="branches-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Our Branch Offices</h2>
+                        <p>Find a BharatLoads office near you</p>
+                    </div>
+
+                    <div class="branches-grid">
+                        <div class="branch-card">
+                            <h3>Mumbai</h3>
+                            <p>BharatLoads Tower, 123 Industrial Area, Mumbai, Maharashtra 400001</p>
+                            <div class="branch-contact">
+                                <p><i class="fas fa-phone"></i> +91 22 1234 5678</p>
+                                <p><i class="fas fa-envelope"></i> mumbai@bharatloads.com</p>
+                            </div>
+                        </div>
+
+                        <div class="branch-card">
+                            <h3>Delhi</h3>
+                            <p>45 Logistics Park, Sector 18, Noida, Uttar Pradesh 201301</p>
+                            <div class="branch-contact">
+                                <p><i class="fas fa-phone"></i> +91 11 2345 6789</p>
+                                <p><i class="fas fa-envelope"></i> delhi@bharatloads.com</p>
+                            </div>
+                        </div>
+
+                        <div class="branch-card">
+                            <h3>Bangalore</h3>
+                            <p>78 Tech Hub Road, Whitefield, Bengaluru, Karnataka 560066</p>
+                            <div class="branch-contact">
+                                <p><i class="fas fa-phone"></i> +91 80 3456 7890</p>
+                                <p><i class="fas fa-envelope"></i> bangalore@bharatloads.com</p>
+                            </div>
+                        </div>
+
+                        <div class="branch-card">
+                            <h3>Chennai</h3>
+                            <p>23 Port Complex, GST Road, Chennai, Tamil Nadu 600045</p>
+                            <div class="branch-contact">
+                                <p><i class="fas fa-phone"></i> +91 44 4567 8901</p>
+                                <p><i class="fas fa-envelope"></i> chennai@bharatloads.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <section class="map-section">
+                <div class="container">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.715872559234!2d72.85391131537648!3d19.0443882587269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8afbfffffff%3A0x1ad797cbfc78d07a!2sBharatLoads%20Tower!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- About Column -->
+                <div class="footer-col about-col">
+                    <img src="https://bharatloads.com/img/logo.png" alt="BharatLoads Logo" width="160">
+                    <p>Leading loading solutions provider in India since 2010. Committed to innovation, efficiency, and customer satisfaction.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col links-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#investor">Investor</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services Links -->
+                <div class="footer-col services-col">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">Heavy Load Transport</a></li>
+                        <li><a href="#">Warehouse Loading</a></li>
+                        <li><a href="#">Port Loading</a></li>
+                        <li><a href="#">Equipment Rental</a></li>
+                        <li><a href="#">Project Cargo</a></li>
+                        <li><a href="#">Consulting Services</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-col contact-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Industrial Area, Mumbai, Maharashtra 400001</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 12345 67890</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@bharatloads.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 8:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="copyright">
+                <p>&copy; 2025 BharatLoads. All Rights Reserved. | <a href="https://www.linkedin.com/in/itshivam96/" target="_blank">💖 By Shivam Kumar</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.main-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+        
+        // Hero Slider
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const sliderIndicators = document.querySelector('.slider-indicators');
+        const prevBtn = document.querySelector('.prev-slide');
+        const nextBtn = document.querySelector('.next-slide');
+        let currentSlide = 0;
+        
+        // Create indicators
+        heroSlides.forEach((slide, index) => {
+            const indicator = document.createElement('div');
+            indicator.classList.add('slider-indicator');
+            if (index === 0) indicator.classList.add('active');
+            indicator.addEventListener('click', () => goToSlide(index));
+            sliderIndicators.appendChild(indicator);
+        });
+        
+        // Show slide
+        function showSlide(index) {
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            heroSlides[index].classList.add('active');
+            
+            // Update indicators
+            const indicators = document.querySelectorAll('.slider-indicator');
+            indicators.forEach(ind => ind.classList.remove('active'));
+            indicators[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+        
+        // Next slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Previous slide
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Go to specific slide
+        function goToSlide(index) {
+            showSlide(index);
+        }
+        
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Auto slide change
+        let slideInterval = setInterval(nextSlide, 5000);
+        
+        // Pause on hover
+        const heroSection = document.querySelector('.hero');
+        heroSection.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        heroSection.addEventListener('mouseleave', () => slideInterval = setInterval(nextSlide, 5000));
+        
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animate stats counter
+        const statItems = document.querySelectorAll('.stat-item h3');
+        
+        function animateStats() {
+            statItems.forEach(item => {
+                const target = parseInt(item.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCount = () => {
+                    current += step;
+                    if (current < target) {
+                        item.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        item.textContent = target;
+                    }
+                };
+                
+                updateCount();
+            });
+        }
+        
+        // Single Page Application Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).style.display = 'block';
+            
+            // Update active nav link
+            document.querySelectorAll('.main-nav li').forEach(li => {
+                li.classList.remove('active');
+            });
+            
+            // Find and activate the corresponding nav link
+            const navLinks = document.querySelectorAll('.main-nav a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${pageId}`) {
+                    link.parentElement.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            mobileMenuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+        
+        // Initialize with home page
+        showPage('home');
+        
+        // Handle navigation clicks
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href').substring(1);
+                if (['home', 'about', 'investor', 'contact'].includes(targetId)) {
+                    e.preventDefault();
+                    showPage(targetId);
+                }
+            });
+        });
+        
+        // Handle smooth scrolling for section links
+        document.querySelectorAll('a[href^="#"]:not([href="#home"]):not([href="#about"]):not([href="#investor"]):not([href="#contact"])').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+        
+        // Service Cards Interactive Effects
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach(card => {
+            // Add hover effect
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.service-icon');
+                icon.style.transform = 'rotate(10deg) scale(1.1)';
+                icon.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.service-icon');
+                icon.style.transform = 'rotate(0) scale(1)';
+                icon.style.boxShadow = 'none';
+            });
+            
+            // Add click effect for mobile
+            card.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    this.classList.toggle('expanded');
+                }
+            });
+        });
+        
+        // Animate features list items on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const features = entry.target.querySelectorAll('.features-list li');
+                    features.forEach((feature, index) => {
+                        setTimeout(() => {
+                            feature.style.opacity = '1';
+                            feature.style.transform = 'translateX(0)';
+                        }, index * 100);
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.service-card').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Timeline Animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        timelineItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)';
+            item.style.transition = `all 0.5s ease ${index * 0.1}s`;
+            timelineObserver.observe(item);
+        });
+        
+        // Team Member Hover Effect
+        const teamMembers = document.querySelectorAll('.team-member');
+        
+        teamMembers.forEach(member => {
+            member.addEventListener('mouseenter', function() {
+                this.querySelector('.member-photo img').style.transform = 'scale(1.1)';
+            });
+            
+            member.addEventListener('mouseleave', function() {
+                this.querySelector('.member-photo img').style.transform = 'scale(1)';
+            });
+        });
+        
+        // Value Cards Animation
+        const valueCards = document.querySelectorAll('.value-card');
+        
+        valueCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+            
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cardObserver.observe(card);
+        });
+        
+        // Form validation for contact page
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            const inputs = this.querySelectorAll('input, select, textarea');
+            
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.remove());
+            
+            inputs.forEach(input => {
+                if (input.required && !input.value.trim()) {
+                    input.classList.add('error');
+                    const errorMsg = document.createElement('div');
+                    errorMsg.className = 'error-message';
+                    errorMsg.textContent = 'This field is required';
+                    input.parentNode.appendChild(errorMsg);
+                    isValid = false;
+                } else {
+                    input.classList.remove('error');
+                }
+                
+                // Email validation
+                if (input.type === 'email' && input.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value)) {
+                        input.classList.add('error');
+                        const errorMsg = document.createElement('div');
+                        errorMsg.className = 'error-message';
+                        errorMsg.textContent = 'Please enter a valid email';
+                        input.parentNode.appendChild(errorMsg);
+                        isValid = false;
+                    }
+                }
+            });
+            
+            if (isValid) {
+                const submitBtn = this.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    alert('Thank you for your message! We will contact you shortly.');
+                    this.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }, 1500);
+            }
+        });
+        
+        // Form validation for investor page
+        const investorForm = document.getElementById('investorForm');
+        
+        investorForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            const inputs = this.querySelectorAll('input, select, textarea');
+            
+            inputs.forEach(input => {
+                if (input.required && !input.value.trim()) {
+                    input.classList.add('error');
+                    isValid = false;
+                } else {
+                    input.classList.remove('error');
+                }
+            });
+            
+            if (isValid) {
+                const submitBtn = this.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    alert('Thank you for your inquiry. Our investor relations team will contact you shortly.');
+                    this.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Inquiry';
+                }, 1500);
+            }
+        });
+        
+        // Revenue Chart
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        const revenueChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['2020', '2021', '2022', '2023'],
+                datasets: [{
+                    label: 'Revenue (in ₹ Crores)',
+                    data: [85, 120, 190, 250],
+                    backgroundColor: [
+                        'rgba(60, 231, 203, 0.7)',
+                        'rgba(60, 231, 203, 0.7)',
+                        'rgba(60, 231, 203, 0.7)',
+                        'rgba(60, 231, 203, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(60, 231, 203, 1)',
+                        'rgba(60, 231, 203, 1)',
+                        'rgba(60, 231, 203, 1)',
+                        'rgba(60, 231, 203, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        // Stats animation on scroll
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+        
+        // Branch cards animation
+        const branchCards = document.querySelectorAll('.branch-card');
+        
+        branchCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+            
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cardObserver.observe(card);
+        });
+        
+        // Map lazy loading
+        const mapObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = entry.target.querySelector('iframe');
+                    if (iframe && !iframe.src) {
+                        iframe.src = iframe.dataset.src;
+                    }
+                    mapObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        const mapContainer = document.querySelector('.map-container');
+        if (mapContainer) {
+            mapObserver.observe(mapContainer);
+        }
+        
+        // Info items animation
+        const infoItems = document.querySelectorAll('.info-item');
+        
+        infoItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-20px)';
+            item.style.transition = `all 0.5s ease ${index * 0.1}s`;
+            
+            const itemObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            itemObserver.observe(item);
+        });
+        
+        // Event card animation
+        const eventCards = document.querySelectorAll('.event-card');
+        
+        eventCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateX(-20px)';
+            card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+            
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cardObserver.observe(card);
+        });
+        
+        // Report cards hover effect
+        const reportCards = document.querySelectorAll('.report-card');
+        
+        reportCards.forEach(card => {
+            const icon = card.querySelector('.report-icon');
+            
+            card.addEventListener('mouseenter', function() {
+                icon.style.transform = 'rotate(10deg) scale(1.1)';
+                icon.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                icon.style.transform = 'rotate(0) scale(1)';
+                icon.style.boxShadow = 'none';
+            });
+        });
+    });
+    </script>
+</body>
+</html>
